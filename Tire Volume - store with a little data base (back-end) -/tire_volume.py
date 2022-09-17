@@ -3,6 +3,7 @@
 
 #Get the date and time of our computer system
 from datetime import datetime
+import os
 
 #Get the exacly time and date
 current_date_and_time = datetime.now()
@@ -29,6 +30,7 @@ with open("volumes.txt", "at") as volumes_tire:
     first_name_user = input("Enter your first name: ")
     last_name_user = input("Enter your last name: ")
     cellphone_user = int(input("Enter your cellphone: "))
+    os.system('cls')
     print(f"________________________________________________________________________________________________________________________________________________", file=volumes_tire)
     print(f" ", file=volumes_tire)
     print(f"User name: {first_name_user} {last_name_user}", file=volumes_tire) #Print the time and date
@@ -39,8 +41,8 @@ with open("volumes.txt", "at") as volumes_tire:
     while add_another_value != 2:
 
         if add_another_value == 1:
+            os.system('cls')
             #Get information from inputs to the user (calculate the volume of the tire)
-            print('')
             width_tire = int(input("Enter the width of the tire in mm (ex 205): "))
             aspect_ratio_tire = int(input("Enter the aspect ratio of the tire (ex 60): "))
             diameter_wheel = int(input("Enter the diameter of the wheel in inches (ex 15): "))
@@ -61,6 +63,7 @@ with open("volumes.txt", "at") as volumes_tire:
                     if add_to_cart == 1:
                         add_to_cart_value = 200
                         total_cart = total_cart +  add_to_cart_value
+                        print('')
                         print('Item added successfully')
                         add_to_cart = 2
 
@@ -79,7 +82,7 @@ with open("volumes.txt", "at") as volumes_tire:
                     if add_to_cart == 1:
                         add_to_cart_value = 350
                         total_cart = total_cart +  add_to_cart_value
-
+                        print('')
                         print('Item added successfully')
                         add_to_cart = 2
 
@@ -98,6 +101,7 @@ with open("volumes.txt", "at") as volumes_tire:
                     if add_to_cart == 1:
                         add_to_cart_value = 500
                         total_cart = total_cart +  add_to_cart_value
+                        print('')
                         print('Item added successfully')
                         add_to_cart = 2
 
@@ -115,7 +119,9 @@ with open("volumes.txt", "at") as volumes_tire:
 
             # Print a volume's name and information to the file.
             print(f"Current date: {current_date_and_time:%Y-%m-%d} | Width of the tire: {width_tire} | Aspect ratio of the tire: {aspect_ratio_tire} | Diameter of the wheel: {diameter_wheel} | Volume of the tire: {volume_in_liters:.2f} [Price: $ {add_to_cart_value}]" , file=volumes_tire) #Print the time and date
-
+            os.system('cls')
+            print(f"Full purchase: $ {total_cart}")
+            print('')
             add_another_value = int(input(f"Would you like to add other data values? \n\n Select [1] to add data \n Select [2] to exit \n\n Your choose: "))
        
         elif add_another_value != 1 and add_another_value != 2:
@@ -123,7 +129,10 @@ with open("volumes.txt", "at") as volumes_tire:
             print('')
             print("Wrong. Please, choose another answer")
             print('')
+            print(f"Full purchase: $ {total_cart}")
+            print('')
             add_another_value = int(input(f"Would you like to add other data values? \n\n Select [1] to add data \n Select [2] to exit \n\n Your choose: "))
+    
     print(f" ", file=volumes_tire)
     print(f"Full purchase: $ {total_cart}", file=volumes_tire)
     print(f" ", file=volumes_tire)
@@ -132,9 +141,10 @@ with open("volumes.txt", "at") as volumes_tire:
 ####################################################################### Back-end ########################################################################### 
 
     #Closing program
+    os.system('cls')
     print('')
     print(f"Full purchase: $ {total_cart}")
     print('')
-    print("Thanks for use our system, have a nice day.")
+    print(f"Thanks for use our system {first_name_user}. Have a nice day.")
     print('')
     print(f"{current_date_and_time:%Y-%m-%d}") #Print the time and date
