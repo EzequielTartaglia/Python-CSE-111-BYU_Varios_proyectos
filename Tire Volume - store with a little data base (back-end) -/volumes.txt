@@ -1,0 +1,7 @@
+current date
+width of the tire
+aspect ratio of the tire
+diameter of the wheel
+volume of the tire
+
+ 
