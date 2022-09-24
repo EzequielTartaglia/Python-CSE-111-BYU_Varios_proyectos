@@ -11,10 +11,11 @@ def main():
     os.system('cls')
     # Get the user's gender, birthdate, height, and weight.
     print('')
-    gender = input("Please enter your gender ("+YELLOW+"M"+END+" or "+YELLOW+"F"+END+"): ")
-    birthdate = input("Enter your birthdate ("+YELLOW+"YYYY-MM-DD"+END+"): ")
-    pounds = float(input("Enter your weight in U.S. "+YELLOW+"pounds"+END+": "))
-    inches = float(input("Enter your height in U.S. "+YELLOW+"inches"+END+": "))
+    gender = input("Please enter your gender ("+YELLOW+"M"+END+" or "+YELLOW+"F"+END+"): "+YELLOW)
+    birthdate = input(END+"Enter your birthdate ("+YELLOW+"YYYY-MM-DD"+END+"): "+YELLOW)
+    pounds = float(input(END+"Enter your weight in U.S. "+YELLOW+"pounds"+END+": "+YELLOW))
+    inches = float(input(END+"Enter your height in U.S. "+YELLOW+"inches"+END+": "+YELLOW))
+    print(END)
     
     # compute the user's age in years.
     age = compute_age(birthdate)
